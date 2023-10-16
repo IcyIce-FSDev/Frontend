@@ -1,0 +1,15 @@
+.App-nav-unauth {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 200px;
+}
+
+.App-nav-auth {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 400px;
+}
