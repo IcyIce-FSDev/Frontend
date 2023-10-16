@@ -35,6 +35,7 @@ function Discord() {
     <main className="Landing-container">
       <p>Not authed</p>
       <p>Discord Register</p>
+      <p>Loading...</p>
     </main>
   );
 }
