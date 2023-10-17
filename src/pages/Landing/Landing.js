@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./Landing.css";
-
 import { useDispatch } from "react-redux";
 import { setUser, logoutUser } from "../../lib/store/slices/authSlice";
 import checkAuth from "../../lib/javascript/checkAuth";
+import Auth from "./auth/Auth";
+import Guest from "./guest/Guest";
 
 function Landing() {
   const dispatch = useDispatch();
@@ -31,19 +31,9 @@ function Landing() {
   }, [dispatch]);
 
   if (authed) {
-    return (
-      <main className="Landing-container">
-        <p>Landing page</p>
-        <p>Authed</p>
-      </main>
-    );
+    return <Auth />;
   } else {
-    return (
-      <main className="Landing-container">
-        <p>Landing page</p>
-        <p>Not Authed</p>
-      </main>
-    );
+    return <Guest />;
   }
 }
 
