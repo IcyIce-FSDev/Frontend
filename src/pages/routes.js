@@ -1,8 +1,9 @@
 // routes.js
 import Landing from "./Landing/Landing";
 import Discord from "./Discord/Discord";
-import Home from "./Home/Home";
+import Games from "./Games/Games";
 import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
+import Logout from "./Logout/Logout";
 
 const routes = [
   {
@@ -14,8 +15,12 @@ const routes = [
     element: <Discord />,
   },
   {
-    path: "home",
-    element: <ProtectedRoute element={<Home />} />,
+    path: "logout",
+    element: <Logout />,
+  },
+  {
+    path: "games",
+    element: <ProtectedRoute element={<Games />} />,
   },
 ];
 

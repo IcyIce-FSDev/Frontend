@@ -9,10 +9,16 @@
   align-items: center;
   justify-content: space-between;
   color: white;
-  margin: 0 1%;
-  height: 5vh;
+  padding: 1% 1%;
+  height: 7vh;
+  border-bottom: silver 2px solid;
 }
 
 * {
   color: white;
+}
+
+.App-h1 {
+  font-size: 28px;
+  font-weight: 700;
 }

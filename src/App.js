@@ -6,7 +6,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h2>Gamers Grouping</h2>
+        <a href="/" className="App-h1">
+          Gamers Grouping
+        </a>
         <Nav />
       </header>
       <Outlet />

@@ -26,7 +26,7 @@ function Discord() {
           if (r.data.success) {
             // need to useDispatch to update redux store auth with slice setUser
             dispatch(setUser(r.data.username));
-            navi("/home");
+            navi("/");
           }
         }
 
@@ -37,7 +37,7 @@ function Discord() {
     } else {
       console.log("No discord auth code");
     }
-  }, [searchParams]);
+  }, [searchParams, dispatch, navi]);
 
   return (
     <main className="Landing-container">

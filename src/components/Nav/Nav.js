@@ -19,12 +19,12 @@ function Nav() {
   } else {
     return (
       <nav className="App-nav-auth">
-        <a href="/home">Home</a>
+        <a href="/games">Games</a>
         <p>Find Match</p>
         <p>Matches</p>
         <p>Bots</p>
         <p>Profile</p>
-        <p>Logout</p>
+        <a href="/logout">Logout</a>
       </nav>
     );
   }
