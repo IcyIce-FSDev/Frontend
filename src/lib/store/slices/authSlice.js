@@ -1,10 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  user: "Loading...",
-  isAuth: false,
-  cookieSet: false,
+// Define a function to get the initial state from sessionStorage
+const getInitialStateFromSessionStorage = () => {
+  const storedState = sessionStorage.getItem("authState");
+  if (storedState) {
+    return JSON.parse(storedState);
+  }
+  return {
+    user: "Loading...",
+    isAuth: false,
+    cookieSet: false,
+  };
 };
+
+const initialState = getInitialStateFromSessionStorage();
 
 const authSlice = createSlice({
   name: "auth",
@@ -14,11 +23,15 @@ const authSlice = createSlice({
       state.user = action.payload;
       state.isAuth = true;
       state.cookieSet = true;
+      // Store the updated state in sessionStorage
+      sessionStorage.setItem("authState", JSON.stringify(state));
     },
     logoutUser: (state) => {
-      state.user = null;
+      state.user = "Loading...";
       state.isAuth = false;
       state.cookieSet = false;
+      // Clear the state from sessionStorage when logging out
+      sessionStorage.removeItem("authState");
     },
   },
 });

@@ -19,7 +19,7 @@ function Nav() {
   } else {
     return (
       <nav className="App-nav-auth">
-        <p>Home</p>
+        <a href="/home">Home</a>
         <p>Find Match</p>
         <p>Matches</p>
         <p>Bots</p>
