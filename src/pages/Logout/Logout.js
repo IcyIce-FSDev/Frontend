@@ -12,13 +12,10 @@ function Logout() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("Logging off user");
-
     // Need to make async function
     async function logoff() {
       try {
         const resp = await userLogout();
-        console.log(resp);
 
         if (resp) {
           dispatch(logoutUser());
