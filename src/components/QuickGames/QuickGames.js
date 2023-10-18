@@ -25,8 +25,6 @@ export default function QuickGames() {
         dispatch(updateStateFn(fortnite));
         dispatch(updateStateOsrs(osrs));
         dispatch(updateStateOw(overwatch));
-
-        console.log(resp);
       } catch (error) {
         console.log(error);
       }
