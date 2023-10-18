@@ -6,6 +6,11 @@ import userLogout from "../../lib/javascript/userLogout";
 import { useDispatch } from "react-redux";
 
 import { logoutUser } from "../../lib/store/slices/authSlice";
+import {
+  removeStateFn,
+  removeStateOsrs,
+  removeStateOw,
+} from "../../lib/store/slices/qGameSlice";
 
 function Logout() {
   const navi = useNavigate();
@@ -19,6 +24,10 @@ function Logout() {
 
         if (resp) {
           dispatch(logoutUser());
+          dispatch(removeStateFn());
+          dispatch(removeStateOsrs());
+          dispatch(removeStateOw());
+
           navi("/");
         }
       } catch (error) {

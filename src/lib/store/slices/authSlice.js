@@ -9,7 +9,6 @@ const getInitialStateFromSessionStorage = () => {
   return {
     user: "Loading...",
     isAuth: false,
-    cookieSet: false,
   };
 };
 
@@ -22,14 +21,14 @@ const authSlice = createSlice({
     setUser: (state, action) => {
       state.user = action.payload;
       state.isAuth = true;
-      state.cookieSet = true;
+
       // Store the updated state in sessionStorage
       sessionStorage.setItem("authState", JSON.stringify(state));
     },
     logoutUser: (state) => {
       state.user = "Loading...";
       state.isAuth = false;
-      state.cookieSet = false;
+
       // Clear the state from sessionStorage when logging out
       sessionStorage.removeItem("authState");
     },

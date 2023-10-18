@@ -23,7 +23,6 @@ function Nav() {
         <p>Find Match</p>
         <p>Matches</p>
         <p>Bots</p>
-        <p>Profile</p>
         <a href="/logout">Logout</a>
       </nav>
     );
