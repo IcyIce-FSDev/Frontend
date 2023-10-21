@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authSlice from "./slices/authSlice";
-import { rootReducer } from "./slices/qGameSlice";
+import activeGameSlice from "./slices/activeGameSlice";
 
 const store = configureStore({
   reducer: {
     auth: authSlice,
-    game: rootReducer, // Combine all game-related slices into a single reducer
+    activeGames: activeGameSlice,
     // Add other slices' reducers here if you have them
   },
 });

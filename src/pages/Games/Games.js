@@ -1,16 +1,37 @@
-import { useSelector } from "react-redux";
-
 import "./Games.css";
+import GameCard from "../../components/GameCard/GameCard";
+import { useEffect, useState } from "react";
+
+import getAllGames from "../../lib/javascript/getAllGames";
 
 function Games() {
-  const user = useSelector((state) => state.auth.user);
+  const [games, setGames] = useState(false);
 
-  return (
-    <main className="Home-container">
-      <p>User: {user}</p>
-      <p>Authorized Game/Rank Page</p>
-    </main>
-  );
+  useEffect(() => {
+    const listGames = async () => {
+      const resp = await getAllGames();
+
+      setGames(resp);
+    };
+
+    listGames();
+  }, []);
+
+  if (!games) {
+    return (
+      <main className="Home-container">
+        <p>Loading...</p>
+      </main>
+    );
+  } else {
+    return (
+      <main className="Home-container">
+        {games.map((game) => {
+          return <GameCard game={game} key={game.game_id} />;
+        })}
+      </main>
+    );
+  }
 }
 
 export default Games;

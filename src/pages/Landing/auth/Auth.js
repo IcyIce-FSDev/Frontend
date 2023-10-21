@@ -1,4 +1,4 @@
-import QuickGames from "../../../components/QuickGames/QuickGames";
+import ActiveGames from "../../../components/ActiveGames/ActiveGames";
 import "./Auth.css";
 import { useSelector } from "react-redux";
 
@@ -19,7 +19,7 @@ function Auth() {
         </div>
       </div>
 
-      <QuickGames />
+      <ActiveGames />
 
       <div className="div3 opts">
         <p>Quick List of Bots user has active</p>

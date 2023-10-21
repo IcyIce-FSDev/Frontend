@@ -1,16 +1,11 @@
 import { useEffect } from "react";
-import "./Logout.css";
 import { useNavigate } from "react-router-dom";
-
-import userLogout from "../../lib/javascript/userLogout";
 import { useDispatch } from "react-redux";
 
+import "./Logout.css";
 import { logoutUser } from "../../lib/store/slices/authSlice";
-import {
-  removeStateFn,
-  removeStateOsrs,
-  removeStateOw,
-} from "../../lib/store/slices/qGameSlice";
+import userLogout from "../../lib/javascript/userLogout";
+import { removeActiveGames } from "../../lib/store/slices/activeGameSlice";
 
 function Logout() {
   const navi = useNavigate();
@@ -24,9 +19,7 @@ function Logout() {
 
         if (resp) {
           dispatch(logoutUser());
-          dispatch(removeStateFn());
-          dispatch(removeStateOsrs());
-          dispatch(removeStateOw());
+          dispatch(removeActiveGames());
 
           navi("/");
         }
