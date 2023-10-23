@@ -1,0 +1,39 @@
+h1 {
+  text-decoration: underline;
+}
+
+.Settings-Container {
+  min-height: 93vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+
+.Form-Container {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 30vh;
+}
+
+.Option-Container {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+label {
+  font-size: 24px;
+}
+
+input {
+  font-size: 26px;
+  text-align: center;
+}
+
+button.Settings-Button {
+  background-color: rgb(54, 52, 52);
+  padding: 0.4% 0.8%;
+  border-radius: 10px;
+}

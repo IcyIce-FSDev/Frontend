@@ -4,6 +4,7 @@ import Discord from "./Discord/Discord";
 import Games from "./Games/Games";
 import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
 import Logout from "./Logout/Logout";
+import { gameRoutes } from "./Games/gameRoutes";
 
 const routes = [
   {
@@ -21,6 +22,7 @@ const routes = [
   {
     path: "games",
     element: <ProtectedRoute element={<Games />} />,
+    children: gameRoutes,
   },
 ];
 

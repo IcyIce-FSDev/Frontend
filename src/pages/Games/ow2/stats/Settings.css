@@ -1,0 +1,18 @@
+.Stats-Container {
+  height: 93vh;
+}
+
+.Stats-Header {
+  height: 5vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Stats-Body {
+  height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}

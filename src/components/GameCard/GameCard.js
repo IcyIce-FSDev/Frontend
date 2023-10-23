@@ -3,8 +3,6 @@ import "./GameCard.css";
 export default function GameCard({ game }) {
   const { name, abbrev, is_active } = game;
 
-  console.log(is_active);
-
   const statsURL = `/games/${abbrev}/stats`;
   const settingsURL = `/games/${abbrev}/settings`;
 

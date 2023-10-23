@@ -4,6 +4,7 @@ import React from "react";
 
 import { useDispatch } from "react-redux";
 import { logoutUser, setUser } from "../../lib/store/slices/authSlice";
+import { removeActiveGames } from "../../lib/store/slices/activeGameSlice";
 
 function ProtectedRoute({ element }) {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function ProtectedRoute({ element }) {
           dispatch(setUser(user.username));
         } else {
           dispatch(logoutUser());
+          dispatch(removeActiveGames());
         }
         setIsAuthenticated(user.isAuth);
       } catch (error) {

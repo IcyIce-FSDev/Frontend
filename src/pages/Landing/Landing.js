@@ -4,6 +4,7 @@ import { setUser, logoutUser } from "../../lib/store/slices/authSlice";
 import checkAuth from "../../lib/javascript/checkAuth";
 import Auth from "./auth/Auth";
 import Guest from "./guest/Guest";
+import { removeActiveGames } from "../../lib/store/slices/activeGameSlice";
 
 function Landing() {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ function Landing() {
           setAuthed(user.isAuth);
         } else {
           dispatch(logoutUser());
+          dispatch(removeActiveGames());
         }
       } catch (error) {
         // Handle the error, e.g., redirect to an error page or display an error message.
